@@ -12,7 +12,13 @@
     .hero { padding: 2rem; background: #e8f5e9; text-align: center; }
     .hero h1 { color: #2e7d32; }
     .section { padding: 2rem; }
-    footer { background: #333; color: white; text-align: center; padding: 1rem; }
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; }
+    .product-card { border: 1px solid #ccc; border-radius: 8px; padding: 1rem; text-align: center; }
+    .product-card img { width: 100px; height: 100px; object-fit: cover; }
+    button { margin-top: 0.5rem; padding: 0.4rem 1rem; background: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer; }
+    button:hover { background: #45a049; }
+    .form { max-width: 400px; margin: auto; padding: 1rem; border: 1px solid #ccc; border-radius: 8px; background: #f9f9f9; }
+    footer { background: #333; color: white; text-align: center; padding: 1rem; margin-top: 2rem; }
   </style>
 </head>
 <body>
@@ -35,11 +41,26 @@
 
   <section class="section" id="products">
     <h2>Popular Products</h2>
-    <ul>
-      <li>Organic Apples - $3.99</li>
-      <li>Almond Milk - $2.49</li>
-      <li>Whole Wheat Bread - $1.99</li>
-    </ul>
+    <div class="products-grid">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/100" alt="Organic Apples" />
+        <h4>Organic Apples</h4>
+        <p>$3.99</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/100" alt="Almond Milk" />
+        <h4>Almond Milk</h4>
+        <p>$2.49</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/100" alt="Whole Wheat Bread" />
+        <h4>Whole Wheat Bread</h4>
+        <p>$1.99</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
   </section>
 
   <section class="section" id="cart">
@@ -49,7 +70,13 @@
 
   <section class="section" id="profile">
     <h2>Your Profile</h2>
-    <p>Login to view your order history and saved preferences.</p>
+    <div class="form">
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" style="width:100%; padding:8px; margin-bottom:10px;" /><br />
+      <label for="password">Password:</label><br />
+      <input type="password" id="password" name="password" style="width:100%; padding:8px; margin-bottom:10px;" /><br />
+      <button>Login</button>
+    </div>
   </section>
 
   <footer>
